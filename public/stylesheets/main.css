@@ -1,0 +1,22 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* NAV BAR */
+
+.nav-bar {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.nav-bar .nav-ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  text-align: center;
+  list-style: none;
+}
+
+.nav-bar .nav-ul .heading {
+}
