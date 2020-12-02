@@ -1,1 +1,35 @@
-<h1>hello world</h1>
+<div class="home-container">
+  <h1 class="recent"><a href="/latest">Latest Reviews</a> </h1>
+
+  <div class="sub-container">
+    <% latest_reviews.each do |review| %>
+
+    <div class="review-container">
+    <a href="/reviews/<%= review['id']%>">  <img src="<%= review["album_img"] %>" alt=""/></a>
+      <div class="detail-links">
+        <a href="#"><p class="read-more">READ MORE</p></a>
+
+        <p class="review-date"><%= review['posting_date']%></p>
+      </div>
+    </div>
+
+    <% end %>
+  </div>
+
+  <h1 class="recent"><a href="/popular">Highest Rated Reviews</a> </h1>
+
+  <div class="sub-container">
+    <% popular_reviews.each do |review| %>
+
+    <div class="review-container">
+      <img src="<%= review["album_img"] %>" alt=""/>
+      <div class="detail-links">
+        <a href="#"><p class="read-more">READ MORE</p></a>
+
+        <p class="review-date"><%= review['posting_date']%></p>
+      </div>
+    </div>
+
+    <% end %>
+  </div>
+</div>

@@ -10,15 +10,29 @@
     <header>
       <nav class="nav-bar">
         <ul class="nav-ul">
-          <li>asd</li>
-          <li>asdf</li>
-          <h1 class="heading">Placeholder</h1>
-          <li>asdf</li>
-          <li>asdf</li>
+          <% if logged_in? %>
+          <li>About</li>
+          <li><a href="/latest"> News</a></li>
+          <a href="/">
+            <h1 class="heading"><%=current_user["username"]%></h1></a
+          >
+          <li><a href="/"> Your Feed</a></li>
+          <form action="/logout" method="post">
+            <input type="hidden" name="_method" value="delete" />
+            <button class="logout-btn"><li>Logout</li></button>
+          </form>
+
+          <% else %>
+          <li>About</li>
+          <li>News</li>
+          <a href="/"> <h1 class="heading">Placeholder</h1></a>
+          <li><a href="/login"> Sign-in</a></li>
+          <li><a href="/signup"> Sign-up</a></li>
+
+          <% end %>
         </ul>
       </nav>
     </header>
-
     <%= yield %>
   </body>
 </html>

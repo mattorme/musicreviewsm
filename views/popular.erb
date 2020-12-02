@@ -1,0 +1,18 @@
+<div class="home-container">
+<h1 class="recent">Highest Rated Reviews</h1>
+
+  <div class="sub-container">
+    <% popular_reviews.each do |review| %>
+
+    <div class="review-container">
+      <img src="<%= review["album_img"] %>" alt=""/>
+      <div class="detail-links">
+        <a href="#"><p class="read-more">READ MORE</p></a>
+
+        <p class="review-date"><%= review['posting_date']%></p>
+      </div>
+    </div>
+
+    <% end %>
+  </div>
+  </div>

@@ -7,8 +7,7 @@
 /* NAV BAR */
 
 .nav-bar {
-  margin-left: 25%;
-  margin-right: 25%;
+  margin: 1% 15% 5% 15%;
 }
 
 .nav-bar .nav-ul {
@@ -18,5 +17,151 @@
   list-style: none;
 }
 
+.nav-bar .nav-ul li {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  padding-top: 24px;
+}
+
 .nav-bar .nav-ul .heading {
+  font-size: 48px;
+}
+
+.nav-ul a {
+  color: black;
+  text-decoration: none;
+}
+
+.nav-ul button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+/* NOT LOGGED IN */
+
+/* LATEST REVIEW + MOST POPULAR REVIEW */
+
+.home-container {
+  margin: 0 5% 0 5%;
+}
+
+.recent {
+  padding-left: 100px;
+}
+
+.sub-container {
+  margin: 0 10% 0 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 25px;
+  padding-bottom: 50px;
+}
+
+.review-container {
+  border-radius: 50px;
+  padding: 25px;
+}
+
+.review-container img {
+  width: 300px;
+}
+
+.review-container form {
+  display: inline;
+}
+
+.review-container img {
+  width: 100%;
+}
+
+.review-container p {
+  font-size: 16px;
+}
+
+.pointer-btn {
+  cursor: pointer;
+}
+
+.review-container a {
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.review-container .description {
+  font-size: 16px;
+  display: inline;
+}
+
+.read-more {
+  margin-right: 100px;
+}
+
+.review-sport,
+.review-username,
+.review-date,
+.read-more {
+  display: inline;
+  color: #000000;
+}
+
+.review-username {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 2.5px solid white;
+}
+
+.detail-links {
+  display: inline;
+}
+
+/* SIGN UP */
+
+/* ACTUAL REVIEW */
+.full-review-container {
+  margin: 0 5% 0 5%;
+}
+
+.review-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.review-details .artist-name {
+  font-size: 100px;
+  padding-top: 150px;
+}
+
+.review-details .review-title {
+  font-size: 72px;
+}
+
+.review-score p {
+  text-align: center;
+  font-size: 100px;
+  margin-top: 200px;
+  margin-left: 200px;
+  margin-right: 200px;
+  border: 10px solid black;
+  border-radius: 150px;
+}
+
+.review-details p {
+  font-size: 24px;
+}
+
+.review-author {
+  display: inline;
+}
+
+.review-img img {
+  width: 600px;
+}
+
+iframe {
+  float: right;
 }
