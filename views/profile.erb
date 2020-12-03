@@ -1,16 +1,17 @@
 <div class="home-container">
 <h1 class="username-profile"><%= user['username']%>'s Reviews</h1>
 
+<% unless following %>
 <form action="/follow_user" method="post">
   <input type="hidden" name="user_id" value="<%= user["id"]%>">
   <button class="follow-btn" type="submit">Follow me</button>
-
 </form>
+<% end  %>
 <div class="feed-container">
   <% users_reviews.each do |review| %>
     <div class="review-container">
       <a class="author-link" href="/users/<%=review['user_id']%>">
-        <h1 class="feed-author">@<%= review['user_id']%></h1></a
+        <h1 class="feed-author">@<%= user['username']%></h1></a
       >
       <p class="feed-date"><%= review['posting_date']%></p>
 
@@ -28,3 +29,5 @@
 </div>
 
 </div>
+
+<%# {"user_id"=>"3"} %>

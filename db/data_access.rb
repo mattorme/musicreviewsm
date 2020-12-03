@@ -8,11 +8,11 @@ def run_sql(sql, params = [])
 end
 
 def latest_reviews_preview(num)
-    run_sql("select * from reviews order by id desc limit #{num};")
+    run_sql("select reviews.* , users.username from reviews inner join users on reviews.user_id = users.id order by id desc limit #{num};")
 end
 
 def popular_reviews_preview(num)
-    run_sql("select * from reviews order by likes desc limit #{num}")
+    run_sql("select reviews.* , users.username from reviews inner join users on reviews.user_id = users.id order by likes desc limit #{num};")
 end
 
 def find_user_by_username(username)

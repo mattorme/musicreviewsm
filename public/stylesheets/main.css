@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Nerko+One&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -30,6 +32,8 @@
 .nav-bar .nav-ul .heading {
   font-size: 48px;
   text-decoration: underline;
+  font-family: "Nerko One", cursive;
+  color: #1da1f2;
 }
 
 .nav-ul a {
@@ -78,10 +82,6 @@
   border-top: 1px gray solid;
 }
 
-.review-container:hover {
-  background-color: #dddddd;
-}
-
 .review-container:first-child {
   margin-top: 50px;
 }
@@ -90,8 +90,12 @@
   margin-bottom: 100px;
 }
 
-.review-container img {
-  width: 300px;
+.review-content {
+  font-size: 40px;
+}
+
+.review-content::first-letter {
+  font-size: 80px;
 }
 
 .review-container form {
@@ -151,8 +155,16 @@
 }
 
 .review-header {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr; */
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.review-img {
+  width: 600px;
+  padding-bottom: 50px;
 }
 
 .review-details .artist-name {
@@ -167,6 +179,7 @@
 .review-score p {
   text-align: center;
   font-size: 100px;
+
   margin-top: 200px;
   margin-left: 200px;
   margin-right: 200px;
@@ -178,20 +191,24 @@
   font-size: 24px;
 }
 
+.score {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
 .review-author {
   display: inline;
 }
 
-.review-img img {
-  width: 600px;
-}
-
 iframe {
-  float: right;
-}
+  margin: 0 auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: block;
 
-.review-img {
-  width: 300px;
+  width: 750px;
+  font-size: 53px;
+  height: 600px;
 }
 
 .review-container .feed-content {
@@ -252,9 +269,9 @@ iframe {
   padding-left: 70px;
 }
 
-form {
+/* form {
   display: inline;
-}
+} */
 
 .follow-btn {
   margin-left: 50px;
@@ -264,4 +281,54 @@ form {
   border: none;
   color: white;
   border-radius: 5px;
+}
+
+.home-container form {
+  /* margin-right: 25%; */
+}
+
+.your-feed-search {
+  /* margin: 0 25% 0 25%; */
+
+  width: 250px;
+}
+
+.form-container {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.form-container form {
+  background-color: var(--secondary-color);
+  margin-top: 50%;
+  text-align: center;
+  border-radius: 20px;
+  padding-bottom: 10px;
+}
+
+.form-container h1 {
+  text-align: center;
+  font-size: 32px;
+  padding-top: 10px;
+}
+
+.form-container .form-label {
+  display: block;
+}
+
+.form-container .form-input {
+  width: 33%;
+}
+
+.form-container button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: white;
+  border: none;
+  background-color: black;
+  padding: 5px;
+  border-radius: 5px;
+  width: 33%;
 }

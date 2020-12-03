@@ -3,6 +3,7 @@ require 'sinatra/reloader' if development?
 require 'pg'
 require 'bcrypt'
 require_relative 'db/data_access'
+require 'pry'
 also_reload 'db/data_access' if development?
 
 enable :sessions
@@ -19,9 +20,10 @@ def current_user
   find_user_by_id(session[:user_id])
 end
 
-def following?(user_id)
-  following = find_following_list(current_user[:id])
-  following.includes? user_id
+def following?(user_id, follower_id)
+  following = find_following_list(follower_id).values.flatten
+
+  following.include? user_id
 end
 
 get '/' do
@@ -93,9 +95,13 @@ end
 
 
 get '/users/:user_id' do
+  following = logged_in? && following?(params[:user_id], session[:user_id])
+
+
   users_reviews = find_users_reviews("#{params[:user_id]}")
   user = find_user_by_id("#{params['user_id']}")
-  erb :profile, locals: {users_reviews: users_reviews, user: user}
+
+  erb :profile, locals: {users_reviews: users_reviews, user: user, following: following}
 end
 
 post '/follow_user' do 
@@ -125,3 +131,4 @@ get '/search' do
   search_reviews = run_sql(sql)
   erb :search, locals: {search_reviews: search_reviews}
 end
+

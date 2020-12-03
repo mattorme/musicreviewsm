@@ -1,14 +1,19 @@
 <div class="home-container">
   <% if logged_in? %>
-  <h1>Your Feed</h1>
+  <h1 class="your-feed">Your Feed</h1>
   <form action="/search">
-    <input type="text" placeholder="Search..." name="q" />
+    <input
+      class="your-feed-search"
+      type="text"
+      placeholder="Search..."
+      name="q"
+    />
   </form>
   <div class="feed-container">
     <% followed_reviewers.each do |review| %>
     <div class="review-container">
       <a class="author-link" href="/users/<%=review['user_id']%>">
-        <h1 class="feed-author">@<%= review['user_id']%></h1></a
+        <h1 class="feed-author">@<%= review['username']%></h1></a
       >
       <p class="feed-date"><%= review['posting_date']%></p>
 
@@ -33,7 +38,7 @@
     <% latest_reviews.each do |review| %>
     <div class="review-container">
       <a class="author-link" href="/users/<%=review['user_id']%>">
-        <h1 class="feed-author">@<%= review['user_id']%></h1></a
+        <h1 class="feed-author">@<%= review['username']%></h1></a
       >
       <p class="feed-date"><%= review['posting_date']%></p>
 
