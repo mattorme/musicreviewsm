@@ -10,12 +10,15 @@
       <p class="score"><%= individual_review['score']%></p>
     </div>
 
-      <img class="review-img" src="<%= individual_review['album_img']%>" alt="" />
-
+    <img class="review-img" src="<%= individual_review['album_img']%>" alt="" />
   </div>
   <div class="review-body">
-  <p class="review-content"><%= individual_review['content']%></p>
-  <iframe src="<%= individual_review['spotify_embed']%>" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    <p class="review-content"><%= individual_review['content']%></p>
+    <iframe
+      src="<%= individual_review['spotify_embed']%>"
+      frameborder="0"
+      allowtransparency="true"
+      allow="encrypted-media"
+    ></iframe>
   </div>
 </div>
-

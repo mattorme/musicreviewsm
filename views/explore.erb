@@ -2,18 +2,22 @@
   <h1 class="recent"><a href="/latest">Latest Reviews</a></h1>
 
   <div class="feed-container">
-   <% latest_reviews.each do |review| %>
+    <% latest_reviews.each do |review| %>
     <div class="review-container">
-    <p class="artist-name-home"><%= review['title']%></p>
-    <div class="author-date">
-      <a class="author-link" href="/users/<%=review['user_id']%>">
-        <h1 class="feed-author">BY USER: <%= review['username']%></h1></a
-      >
-      <p class="feed-date"><%= review['posting_date']%></p>
-</div>
+      <p class="artist-name-home"><%= review['title']%></p>
+      <div class="author-date">
+        <a class="author-link" href="/users/<%=review['user_id']%>">
+          <h1 class="feed-author">BY USER: <%= review['username']%></h1></a
+        >
+        <p class="feed-date"><%= review['posting_date']%></p>
+      </div>
 
-
-      <p class="feed-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quod consequuntur minima alias, dolorum quidem quas laudantium, molestiae suscipit inventore delectus reprehenderit maiores sunt deleniti atque expedita officiis, voluptates odio.</p>
+      <p class="feed-content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quod
+        consequuntur minima alias, dolorum quidem quas laudantium, molestiae
+        suscipit inventore delectus reprehenderit maiores sunt deleniti atque
+        expedita officiis, voluptates odio.
+      </p>
 
       <a href="/reviews/<%= review['id']%>">
         <img class="feed-img" src="<%= review["album_img"] %>" alt=""/></a
@@ -27,16 +31,20 @@
   <div class="feed-container">
     <% popular_reviews.each do |review| %>
     <div class="review-container">
-    <p class="artist-name-home"><%= review['title']%></p>
-    <div class="author-date">
-      <a class="author-link" href="/users/<%=review['user_id']%>">
-        <h1 class="feed-author">BY USER: <%= review['username']%></h1></a
-      >
-      <p class="feed-date"><%= review['posting_date']%></p>
-</div>
+      <p class="artist-name-home"><%= review['title']%></p>
+      <div class="author-date">
+        <a class="author-link" href="/users/<%=review['user_id']%>">
+          <h1 class="feed-author">BY USER: <%= review['username']%></h1></a
+        >
+        <p class="feed-date"><%= review['posting_date']%></p>
+      </div>
 
-
-      <p class="feed-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quod consequuntur minima alias, dolorum quidem quas laudantium, molestiae suscipit inventore delectus reprehenderit maiores sunt deleniti atque expedita officiis, voluptates odio.</p>
+      <p class="feed-content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quod
+        consequuntur minima alias, dolorum quidem quas laudantium, molestiae
+        suscipit inventore delectus reprehenderit maiores sunt deleniti atque
+        expedita officiis, voluptates odio.
+      </p>
 
       <a href="/reviews/<%= review['id']%>">
         <img class="feed-img" src="<%= review["album_img"] %>" alt=""/></a
@@ -44,5 +52,5 @@
     </div>
     <% end %>
   </div>
-    <p class="end">You're all up to date!</p>
+  <p class="end">You're all up to date!</p>
 </div>

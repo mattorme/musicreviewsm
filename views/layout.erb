@@ -12,13 +12,15 @@
         <ul class="nav-ul">
           <% if logged_in? %>
           <a href="/explore">
-          <li>Explore</li>
+            <li>Explore</li>
           </a>
           <li><a href="/new">Post Review</a></li>
-          <a href="/">
-            <h1 class="heading">MusicReviews</h1></a
-          >
-          <li><a href="/users/<%=current_user['id']%>"> <%=current_user["username"]%></a></li>
+          <a href="/"> <h1 class="heading">MusicReviews</h1></a>
+          <li>
+            <a href="/users/<%=current_user['id']%>">
+              <%=current_user["username"]%></a
+            >
+          </li>
           <form action="/logout" method="post">
             <input type="hidden" name="_method" value="delete" />
             <button class="logout-btn"><li>Logout</li></button>
@@ -26,7 +28,7 @@
 
           <% else %>
           <a href="/explore">
-          <li>Explore</li>
+            <li>Explore</li>
           </a>
           <li>News</li>
           <a href="/"> <h1 class="heading">Placeholder</h1></a>

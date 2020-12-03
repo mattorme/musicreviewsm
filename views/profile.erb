@@ -1,33 +1,36 @@
 <div class="home-container">
-<h1 class="username-profile"><%= user['username']%>'s Reviews</h1>
+  <h1 class="username-profile"><%= user['username']%>'s Reviews</h1>
 
-<% unless following %>
-<form action="/follow_user" method="post">
-  <input type="hidden" name="user_id" value="<%= user["id"]%>">
-  <button class="follow-btn" type="submit">Follow me</button>
-</form>
-<% end  %>
-<div class="feed-container">
-  <% users_reviews.each do |review| %>
+  <% unless following %>
+  <form action="/follow_user" method="post">
+    <input type="hidden" name="user_id" value="<%= user["id"]%>">
+    <button class="follow-btn" type="submit">Follow me</button>
+  </form>
+  <% end %>
+  <div class="feed-container">
+    <% users_reviews.each do |review| %>
     <div class="review-container">
-    <p class="artist-name-home"><%= review['title']%></p>
-    <div class="author-date">
-      <a class="author-link" href="/users/<%=review['user_id']%>">
-        <h1 class="feed-author">BY USER: <%= user['username']%></h1></a
-      >
-      <p class="feed-date"><%= review['posting_date']%></p>
-</div>
+      <p class="artist-name-home"><%= review['title']%></p>
+      <div class="author-date">
+        <a class="author-link" href="/users/<%=review['user_id']%>">
+          <h1 class="feed-author">BY USER: <%= user['username']%></h1></a
+        >
+        <p class="feed-date"><%= review['posting_date']%></p>
+      </div>
 
-
-      <p class="feed-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quod consequuntur minima alias, dolorum quidem quas laudantium, molestiae suscipit inventore delectus reprehenderit maiores sunt deleniti atque expedita officiis, voluptates odio.</p>
+      <p class="feed-content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quod
+        consequuntur minima alias, dolorum quidem quas laudantium, molestiae
+        suscipit inventore delectus reprehenderit maiores sunt deleniti atque
+        expedita officiis, voluptates odio.
+      </p>
 
       <a href="/reviews/<%= review['id']%>">
         <img class="feed-img" src="<%= review["album_img"] %>" alt=""/></a
       >
     </div>
     <% end %>
-</div>
-
+  </div>
 </div>
 
 <%# {"user_id"=>"3"} %>
