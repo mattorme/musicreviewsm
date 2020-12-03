@@ -3,7 +3,6 @@ require 'sinatra/reloader' if development?
 require 'pg'
 require 'bcrypt'
 require_relative 'db/data_access'
-require 'pry'
 also_reload 'db/data_access' if development?
 
 enable :sessions
