@@ -11,7 +11,9 @@
     <div class="review-container">
     <p class="artist-name-home"><%= review['title']%></p>
     <div class="author-date">
-
+      <a class="author-link" href="/users/<%=review['user_id']%>">
+        <h1 class="feed-author">BY USER: <%= review['username']%></h1></a
+      >
       <p class="feed-date"><%= review['posting_date']%></p>
 </div>
 
