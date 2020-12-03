@@ -5,7 +5,7 @@
     <% latest_reviews.each do |review| %>
     <div class="review-container">
       <a class="author-link" href="/users/<%=review['user_id']%>">
-        <h1 class="feed-author">@<%= review['user_id']%></h1></a
+        <h1 class="feed-author">@<%= review['username']%></h1></a
       >
       <p class="feed-date"><%= review['posting_date']%></p>
 
@@ -28,7 +28,7 @@
     <% popular_reviews.each do |review| %>
     <div class="review-container">
       <a class="author-link" href="/users/<%=review['user_id']%>">
-        <h1 class="feed-author">@<%= review['user_id']%></h1></a
+        <h1 class="feed-author">@<%= review['username']%></h1></a
       >
       <p class="feed-date"><%= review['posting_date']%></p>
 

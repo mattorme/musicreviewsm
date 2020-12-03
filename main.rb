@@ -28,6 +28,8 @@ end
 get '/' do
   latest_reviews = latest_reviews_preview(100)
   popular_reviews = popular_reviews_preview(8)
+
+
   if logged_in?
    followed_reviewers = find_reviews_from_followed_users_by_user_id(session[:user_id])
   else 
@@ -113,6 +115,8 @@ end
 get '/explore' do
   latest_reviews = latest_reviews_preview(4)
   popular_reviews = popular_reviews_preview(4)
+
+
 
   erb :explore, locals: {latest_reviews: latest_reviews, popular_reviews: popular_reviews}
 end
