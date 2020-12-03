@@ -14,7 +14,7 @@
   <div class="feed-container">
    <% followed_reviewers.each do |review| %>
     <div class="review-container">
-    <p class="artist-name-home"><%= review['artist_name']%></p>
+    <p class="artist-name-home"><%= review['title']%></p>
     <div class="author-date">
       <a class="author-link" href="/users/<%=review['user_id']%>">
         <h1 class="feed-author">BY USER: <%= review['username']%></h1></a
@@ -39,7 +39,7 @@
   <div class="feed-container">
     <% latest_reviews.each do |review| %>
     <div class="review-container">
-    <p class="artist-name-home"><%= review['artist_name']%></p>
+    <p class="artist-name-home"><%= review['title']%></p>
     <div class="author-date">
       <a class="author-link" href="/users/<%=review['user_id']%>">
         <h1 class="feed-author">BY USER: <%= review['username']%></h1></a
