@@ -11,19 +11,23 @@
       <nav class="nav-bar">
         <ul class="nav-ul">
           <% if logged_in? %>
-          <li>About</li>
-          <li><a href="/latest"> News</a></li>
+          <a href="/explore">
+          <li>Explore</li>
+          </a>
+          <li><a href="/new">Post Review</a></li>
           <a href="/">
-            <h1 class="heading"><%=current_user["username"]%></h1></a
+            <h1 class="heading">Placeholder</h1></a
           >
-          <li><a href="/"> Your Feed</a></li>
+          <li><a href="/users/<%=current_user['id']%>"> <%=current_user["username"]%></a></li>
           <form action="/logout" method="post">
             <input type="hidden" name="_method" value="delete" />
             <button class="logout-btn"><li>Logout</li></button>
           </form>
 
           <% else %>
-          <li>About</li>
+          <a href="/explore">
+          <li>Explore</li>
+          </a>
           <li>News</li>
           <a href="/"> <h1 class="heading">Placeholder</h1></a>
           <li><a href="/login"> Sign-in</a></li>

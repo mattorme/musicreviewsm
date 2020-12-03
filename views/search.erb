@@ -1,25 +1,27 @@
 <div class="home-container">
-<h1 class="recent"><a href="/popular">Highest Rated Reviews</a></h1>
 
+<h1>Your Feed</h1>
+  <form action="/search">
+          <input type="text" placeholder="Search..." name="q">
+        </form>
   <div class="feed-container">
-    <% popular_reviews.each do |review| %>
+     <% search_reviews.each do |review| %>
     <div class="review-container">
-      <a class="author-link" href="/users/<%=review['user_id']%>">
-        <h1 class="feed-author">@<%= review['user_id']%></h1></a
-      >
-      <p class="feed-date"><%= review['posting_date']%></p>
+    <a class="author-link" href="/users/<%=review['user_id']%>"> <h1 class="feed-author">@<%= review['user_id']%></h1></a>
+          <p class="feed-date"><%= review['posting_date']%></p>
 
       <a href="/reviews/<%= review['id']%>">
         <h1 class="feed-title"><%= review['title']%></h1></a
       >
-
+     
       <p class="feed-content"><%= review['content']%></p>
 
       <a href="/reviews/<%= review['id']%>">
         <img class="feed-img" src="<%= review["album_img"] %>" alt=""/></a
       >
+
     </div>
     <% end %>
+        <p class="end">No more search results!</p>
   </div>
-    <p class="end">You're all up to date!</p>
-</div>
+  </div>

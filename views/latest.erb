@@ -1,18 +1,24 @@
 <div class="home-container">
-<h1 class="recent"><a href="/latest">Latest 50 Reviews</a> </h1>
+  <h1 class="recent"><a href="/latest">Latest Reviews</a></h1>
 
-  <div class="sub-container">
+  <div class="feed-container">
     <% latest_reviews.each do |review| %>
-
     <div class="review-container">
-      <img src="<%= review["album_img"] %>" alt=""/>
-      <div class="detail-links">
-        <a href="#"><p class="read-more">READ MORE</p></a>
+      <a class="author-link" href="/users/<%=review['user_id']%>">
+        <h1 class="feed-author">@<%= review['user_id']%></h1></a
+      >
+      <p class="feed-date"><%= review['posting_date']%></p>
 
-        <p class="review-date"><%= review['posting_date']%></p>
-      </div>
+      <a href="/reviews/<%= review['id']%>">
+        <h1 class="feed-title"><%= review['title']%></h1></a
+      >
+
+      <p class="feed-content"><%= review['content']%></p>
+
+      <a href="/reviews/<%= review['id']%>">
+        <img class="feed-img" src="<%= review["album_img"] %>" alt=""/></a
+      >
     </div>
-
     <% end %>
   </div>
-  </div>
+</div>

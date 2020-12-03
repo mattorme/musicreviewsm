@@ -1,8 +1,13 @@
 <div class="home-container">
-<h1 class="recent"><a href="/popular">Highest Rated Reviews</a></h1>
+<h1 class="username-profile"><%= user['username']%>'s Reviews</h1>
 
-  <div class="feed-container">
-    <% popular_reviews.each do |review| %>
+<form action="/follow_user" method="post">
+  <input type="hidden" name="user_id" value="<%= user["id"]%>">
+  <button class="follow-btn" type="submit">Follow me</button>
+
+</form>
+<div class="feed-container">
+  <% users_reviews.each do |review| %>
     <div class="review-container">
       <a class="author-link" href="/users/<%=review['user_id']%>">
         <h1 class="feed-author">@<%= review['user_id']%></h1></a
@@ -20,6 +25,6 @@
       >
     </div>
     <% end %>
-  </div>
-    <p class="end">You're all up to date!</p>
+</div>
+
 </div>

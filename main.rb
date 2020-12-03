@@ -19,10 +19,20 @@ def current_user
   find_user_by_id(session[:user_id])
 end
 
+def following?(user_id)
+  following = find_following_list(current_user[:id])
+  following.includes? user_id
+end
+
 get '/' do
-  latest_reviews = latest_reviews_preview(8)
+  latest_reviews = latest_reviews_preview(100)
   popular_reviews = popular_reviews_preview(8)
-  erb :index, locals: {latest_reviews: latest_reviews, popular_reviews: popular_reviews}
+  if logged_in?
+   followed_reviewers = find_reviews_from_followed_users_by_user_id(session[:user_id])
+  else 
+   followed_reviewers = nil
+  end
+  erb :index, locals: {latest_reviews: latest_reviews, popular_reviews: popular_reviews, followed_reviewers: followed_reviewers}
 end
 
 get '/signup' do
@@ -31,7 +41,7 @@ end
 
 post '/signup' do
   password_digest = BCrypt::Password.create(params["password"])
-  run_sql("INSERT INTO users (email, username, password_digest, followers) VALUES ('#{params["email"]}', '#{params["username"]}', '#{password_digest}', 0);")
+  run_sql("INSERT INTO users (email, username, password_digest) VALUES ('#{params["email"]}', '#{params["username"]}', '#{password_digest}');")
   redirect "/"
 end
 
@@ -68,4 +78,50 @@ end
 get '/reviews/:id' do 
   individual_review = find_review_by_id("#{params[:id]}")
   erb :reviews, locals: {individual_review: individual_review}
+end
+
+get '/new' do
+  redirect '/login' unless logged_in?
+  erb :post
+end
+
+post '/new' do 
+  sql = "insert into reviews (title, artist_name, content, score, spotify_embed, album_img) values ('#{params["title"]}', '#{params["artist_name"]}', '#{params["content"]}', #{params["score"]}, '#{params["spotify_embed"]}', '#{params["album_img"]}');"
+  run_sql(sql)
+  redirect "/"
+end
+
+
+get '/users/:user_id' do
+  users_reviews = find_users_reviews("#{params[:user_id]}")
+  user = find_user_by_id("#{params['user_id']}")
+  erb :profile, locals: {users_reviews: users_reviews, user: user}
+end
+
+post '/follow_user' do 
+
+  follow_user(session[:user_id], params['user_id'])
+  redirect '/'
+
+end
+
+get '/explore' do
+  latest_reviews = latest_reviews_preview(4)
+  popular_reviews = popular_reviews_preview(4)
+
+  erb :explore, locals: {latest_reviews: latest_reviews, popular_reviews: popular_reviews}
+end
+
+get '/search' do
+  if params['q']
+    sql = "select * from reviews where title like '%#{params['q']}%' or artist_name like '%#{params['q']}%' or content like '%#{params['q']}%' order by id desc limit 100;"
+  # elsif params['sport']
+  #   sql = "select * from gifs where sport = '#{params['sport']}' order by id desc limit 21;"
+  # elsif params['athlete']
+  #   sql = "select * from gifs where athlete = '#{params['athlete']}' order by id desc limit 21;"
+  else
+    redirect '/'
+  end
+  search_reviews = run_sql(sql)
+  erb :search, locals: {search_reviews: search_reviews}
 end

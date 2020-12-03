@@ -23,8 +23,13 @@
   padding-top: 24px;
 }
 
+.nav-bar .nav-ul li:hover {
+  text-decoration: underline;
+}
+
 .nav-bar .nav-ul .heading {
   font-size: 48px;
+  text-decoration: underline;
 }
 
 .nav-ul a {
@@ -47,24 +52,42 @@
 /* LATEST REVIEW + MOST POPULAR REVIEW */
 
 .home-container {
-  margin: 0 5% 0 5%;
+  margin: 0 30% 0 30%;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .recent {
-  padding-left: 100px;
+  padding-left: 75px;
+}
+
+.recent a {
+  color: black;
 }
 
 .sub-container {
   margin: 0 10% 0 10%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 25px;
-  padding-bottom: 50px;
+  grid-template-columns: 1fr;
+  /* grid-gap: 25px; */
+  /* padding-bottom: 50px; */
 }
 
 .review-container {
-  border-radius: 50px;
-  padding: 25px;
+  background-color: white;
+  /* padding-top: 25px; */
+  border-top: 1px gray solid;
+}
+
+.review-container:hover {
+  background-color: #dddddd;
+}
+
+.review-container:first-child {
+  margin-top: 50px;
+}
+
+.review-container:last-child {
+  margin-bottom: 100px;
 }
 
 .review-container img {
@@ -76,7 +99,8 @@
 }
 
 .review-container img {
-  width: 100%;
+  /* width: 100%; */
+  float: right;
 }
 
 .review-container p {
@@ -164,4 +188,80 @@
 
 iframe {
   float: right;
+}
+
+.review-img {
+  width: 300px;
+}
+
+.review-container .feed-content {
+  font-size: 16px;
+  width: 500px;
+  /* height: 100px; */
+  /* white-space: nowrap; */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.feed-container {
+  margin: 0 10% 0 10%;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  /* grid-gap: 25px; */
+  /* padding-bottom: 25px; */
+}
+
+.feed-title {
+  font-size: 20px;
+  color: black;
+  padding-bottom: 5px;
+}
+
+.review-container .feed-img {
+  margin-top: -65px;
+  width: 60px;
+}
+
+.review-container .feed-date {
+  font-size: 16px;
+  display: inline;
+}
+
+.author-link {
+  color: black;
+}
+
+.review-container .feed-author {
+  font-size: 22px;
+  color: gray;
+  padding-right: 15px;
+  /* width: 50px; */
+  display: inline;
+}
+
+.end {
+  text-align: center;
+  font-size: 48px;
+  padding-bottom: 100px;
+}
+
+.username-profile {
+  display: inline;
+  padding-left: 70px;
+}
+
+form {
+  display: inline;
+}
+
+.follow-btn {
+  margin-left: 50px;
+  padding: 5px;
+  font-size: 16px;
+  background-color: red;
+  border: none;
+  color: white;
+  border-radius: 5px;
 }
