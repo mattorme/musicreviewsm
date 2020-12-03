@@ -56,12 +56,12 @@
 /* LATEST REVIEW + MOST POPULAR REVIEW */
 
 .home-container {
-  margin: 0 30% 0 30%;
+  margin: 0 25% 0 25%;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .recent {
-  padding-left: 75px;
+  margin-left: 95px;
 }
 
 .recent a {
@@ -90,8 +90,12 @@
   margin-bottom: 100px;
 }
 
+.review-body {
+  margin: 0 25% 0 25%;
+}
+
 .review-content {
-  font-size: 40px;
+  font-size: 20px;
 }
 
 .review-content::first-letter {
@@ -152,35 +156,45 @@
 /* ACTUAL REVIEW */
 .full-review-container {
   margin: 0 5% 0 5%;
+  background-color: #f7f7f7;
 }
 
 .review-header {
   /* display: grid;
   grid-template-columns: 1fr 1fr 1fr; */
-
   display: flex;
   justify-content: space-between;
+  padding: 0px 50px 0 50px;
+  margin: 10px;
+  border-bottom: 1px solid black;
 }
 
 .review-img {
   width: 600px;
+  margin-top: 50px;
   padding-bottom: 50px;
 }
 
 .review-details .artist-name {
-  font-size: 100px;
+  font-size: 85px;
   padding-top: 150px;
 }
 
 .review-details .review-title {
-  font-size: 72px;
+  font-size: 58px;
+}
+
+.review-container .artist-name-home {
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 300px;
+  margin-top: 60px;
 }
 
 .review-score p {
   text-align: center;
   font-size: 100px;
-
-  margin-top: 200px;
+  margin-top: 250px;
   margin-left: 200px;
   margin-right: 200px;
   border: 10px solid black;
@@ -192,8 +206,8 @@
 }
 
 .score {
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .review-author {
@@ -214,11 +228,13 @@ iframe {
 .review-container .feed-content {
   font-size: 16px;
   width: 500px;
+  margin-left: 300px;
+
   /* height: 100px; */
   /* white-space: nowrap; */
-  white-space: nowrap;
+  /* white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis; */
 }
 
 .feed-container {
@@ -231,19 +247,23 @@ iframe {
 }
 
 .feed-title {
-  font-size: 20px;
+  font-size: 24px;
   color: black;
-  padding-bottom: 5px;
+  padding-top: 5px;
+  margin-left: 300px;
 }
 
 .review-container .feed-img {
-  margin-top: -65px;
-  width: 60px;
+  margin-top: -200px;
+  margin-bottom: 20px;
+  float: left;
+  width: 250px;
 }
 
 .review-container .feed-date {
   font-size: 16px;
   display: inline;
+  margin-left: 300px;
 }
 
 .author-link {
@@ -254,6 +274,9 @@ iframe {
   font-size: 22px;
   color: gray;
   padding-right: 15px;
+  margin-left: 300px;
+  font-style: italic;
+
   /* width: 50px; */
   display: inline;
 }
@@ -281,10 +304,6 @@ iframe {
   border: none;
   color: white;
   border-radius: 5px;
-}
-
-.home-container form {
-  /* margin-right: 25%; */
 }
 
 .your-feed-search {
@@ -331,4 +350,18 @@ iframe {
   padding: 5px;
   border-radius: 5px;
   width: 33%;
+}
+
+.grid-container {
+  margin-left: 90px;
+  margin-right: -175px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.your-feed-search {
+  height: 30px;
+  border-radius: 15px;
+  padding: 5px;
+  border: black solid 1px;
 }

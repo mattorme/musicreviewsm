@@ -1,5 +1,6 @@
 <div class="home-container">
   <% if logged_in? %>
+  <div class="grid-container">
   <h1 class="your-feed">Your Feed</h1>
   <form action="/search">
     <input
@@ -9,19 +10,20 @@
       name="q"
     />
   </form>
+  </div>
   <div class="feed-container">
-    <% followed_reviewers.each do |review| %>
+   <% followed_reviewers.each do |review| %>
     <div class="review-container">
+    <p class="artist-name-home"><%= review['artist_name']%></p>
+    <div class="author-date">
       <a class="author-link" href="/users/<%=review['user_id']%>">
-        <h1 class="feed-author">@<%= review['username']%></h1></a
+        <h1 class="feed-author">BY USER: <%= review['username']%></h1></a
       >
       <p class="feed-date"><%= review['posting_date']%></p>
+</div>
 
-      <a href="/reviews/<%= review['id']%>">
-        <h1 class="feed-title"><%= review['title']%></h1></a
-      >
 
-      <p class="feed-content"><%= review['content']%></p>
+      <p class="feed-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quod consequuntur minima alias, dolorum quidem quas laudantium, molestiae suscipit inventore delectus reprehenderit maiores sunt deleniti atque expedita officiis, voluptates odio.</p>
 
       <a href="/reviews/<%= review['id']%>">
         <img class="feed-img" src="<%= review["album_img"] %>" alt=""/></a
@@ -37,16 +39,16 @@
   <div class="feed-container">
     <% latest_reviews.each do |review| %>
     <div class="review-container">
+    <p class="artist-name-home"><%= review['artist_name']%></p>
+    <div class="author-date">
       <a class="author-link" href="/users/<%=review['user_id']%>">
-        <h1 class="feed-author">@<%= review['username']%></h1></a
+        <h1 class="feed-author">BY USER: <%= review['username']%></h1></a
       >
       <p class="feed-date"><%= review['posting_date']%></p>
+</div>
 
-      <a href="/reviews/<%= review['id']%>">
-        <h1 class="feed-title"><%= review['title']%></h1></a
-      >
 
-      <p class="feed-content"><%= review['content']%></p>
+      <p class="feed-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quod consequuntur minima alias, dolorum quidem quas laudantium, molestiae suscipit inventore delectus reprehenderit maiores sunt deleniti atque expedita officiis, voluptates odio.</p>
 
       <a href="/reviews/<%= review['id']%>">
         <img class="feed-img" src="<%= review["album_img"] %>" alt=""/></a

@@ -1,25 +1,28 @@
 <div class="home-container">
 
-<h1>Your Feed</h1>
-  <form action="/search">
-          <input type="text" placeholder="Search..." name="q">
+<div class="grid-container">
+<h1>Search Results</h1>
+  <form class="your-feed" action="/search">
+          <input class="your-feed-search" type="text" placeholder="Search..." name="q">
         </form>
+        </div>
   <div class="feed-container">
-     <% search_reviews.each do |review| %>
+    <% search_reviews.each do |review| %>
     <div class="review-container">
-    <a class="author-link" href="/users/<%=review['user_id']%>"> <h1 class="feed-author">@<%= review['user_id']%></h1></a>
-          <p class="feed-date"><%= review['posting_date']%></p>
-
-      <a href="/reviews/<%= review['id']%>">
-        <h1 class="feed-title"><%= review['title']%></h1></a
+    <p class="artist-name-home"><%= review['artist_name']%></p>
+    <div class="author-date">
+      <a class="author-link" href="/users/<%=review['user_id']%>">
+        <h1 class="feed-author">BY USER: <%= review['username']%></h1></a
       >
-     
-      <p class="feed-content"><%= review['content']%></p>
+      <p class="feed-date"><%= review['posting_date']%></p>
+</div>
+
+
+      <p class="feed-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quod consequuntur minima alias, dolorum quidem quas laudantium, molestiae suscipit inventore delectus reprehenderit maiores sunt deleniti atque expedita officiis, voluptates odio.</p>
 
       <a href="/reviews/<%= review['id']%>">
         <img class="feed-img" src="<%= review["album_img"] %>" alt=""/></a
       >
-
     </div>
     <% end %>
         <p class="end">No more search results!</p>

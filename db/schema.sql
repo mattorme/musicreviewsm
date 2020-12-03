@@ -46,9 +46,13 @@ CREATE TABLE followers (
 
 INSERT INTO users (username, email, password_digest) VALUES ('sdfg', 'wdfas@afds.com', '1234');
 
-INSERT INTO reviews (user_id, title, artist_name, content, score, spotify_embed, album_img, likes) VALUES (1,'Test Review', 'Artist Name', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio consectetur ab, exercitationem fuga in minima expedita. Provident eos consectetur vitae qui nesciunt magni voluptate sed expedita aut iusto inventore ullam eaque soluta, dolore ipsum repellat! Error porro iure modi nostrum illum et ullam neque doloribus nulla impedit laudantium eveniet enim nam, corporis a, odit natus velit quos adipisci quasi, pariatur distinctio temporibus delectus asperiores? Maiores et rerum ipsam voluptates mollitia! Eligendi sapiente omnis explicabo similique quo autem eaque, maiores veniam, rem minus, nobis illum quibusdam alias quod iure neque. Enim libero ut doloremque saepe blanditiis velit assumenda. Voluptatibus, facere esse.', 8.5, 'https://open.spotify.com/embed/album/4VFG1DOuTeDMBjBLZT7hCK', 'https://upload.wikimedia.org/wikipedia/en/0/01/Anderson-Park-Malibu-Cover-Billboard-650x650.jpg', 1);
+INSERT INTO reviews (user_id, title, artist_name, content, score, spotify_embed, album_img, likes, album_name) VALUES (5,'Test Review', 'Artist Name', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio consectetur ab, exercitationem fuga in minima expedita. Provident eos consectetur vitae qui nesciunt magni voluptate sed expedita aut iusto inventore ullam eaque soluta, dolore ipsum repellat! Error porro iure modi nostrum illum et ullam neque doloribus nulla impedit laudantium eveniet enim nam, corporis a, odit natus velit quos adipisci quasi, pariatur distinctio temporibus delectus asperiores? Maiores et rerum ipsam voluptates mollitia! Eligendi sapiente omnis explicabo similique quo autem eaque, maiores veniam, rem minus, nobis illum quibusdam alias quod iure neque. Enim libero ut doloremque saepe blanditiis velit assumenda. Voluptatibus, facere esse.', 8.5, 'https://open.spotify.com/embed/album/4VFG1DOuTeDMBjBLZT7hCK', 'https://upload.wikimedia.org/wikipedia/en/0/01/Anderson-Park-Malibu-Cover-Billboard-650x650.jpg', 4, "Reason Album");
 
 INSERT INTO users (username, email, password_digest) VALUES ('1231', 'wdfasdasdasdasdas@afds.com', 'smvklsdfvmdls');
 
 
 <iframe src="https://open.spotify.com/embed/album/3wzeXReoE5Ul6ZMLvkAnHw" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+INSERT INTO users (username, email, password_digest) VALUES ('abcd', 'wdfas@afds.com', '1234');
+
+ALTER TABLE reviews ADD COLUMN album_name VARCHAR(20);
